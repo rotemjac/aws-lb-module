@@ -3,7 +3,7 @@ resource "aws_alb" "my-alb" {
   internal        = "false"
 
   subnets         = ["${var.subnets}"]
-  security_groups = ["${split(",", aws_security_group.alb_sg.id)}"]
+  security_groups = ["${aws_security_group.my_sg.id}"]
 
   tags {
     Name    = "My-LB-Tag"
